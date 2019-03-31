@@ -1,0 +1,12 @@
+#!/bin/bash
+# for x in exp/{tri1,tri2,tri3,nnet3/tdnn_lstm}*/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/wer_* 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/{tri1,tri2,tri3,nnet3/tdnn_lstm}*/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/{tri1,tri2,tri3,nnet3/tdnn_lstm}*/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep Sum $x/score_*/*.sys 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/nnet3/{tdnn_lstm*,chain*}/adaptation/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/wer_* 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/nnet3/tdnn_lstm*/adaptation_{hubei,lm_hubei}/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/nnet3/tdnn_lstm*/adaptation_lm_hubei/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+for x in exp/nnet3/tdnn_lstm*/adaptation_lm_hubei_100/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/nnet3/tdnn_lstm*_lin/decode_adapt_hubei/*_5/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/nnet3/tdnn_lstm*_kld/decode_adapt_hubei/*_30/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+# for x in exp/nnet3/tdnn_lstm*_lhuc/decode_adapt_hubei/*_200/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+exit 0

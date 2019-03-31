@@ -1,0 +1,4 @@
+#!/bin/bash
+for x in exp/nnet3/tdnn_lstm*_lhuc_kld/decode_adapt_hubei_lhuc_kld_31/*_31/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+#for x in exp/nnet3/tdnn_lstm*_lhuc_kld/decode_adapt_hubei_lhuc_kld_100_31/*_31/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+exit 0

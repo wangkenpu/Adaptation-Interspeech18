@@ -1,0 +1,3 @@
+#!/bin/bash
+for x in exp/nnet3/tdnn_lstm*_kld/decode_adapt_hubei_kld/*_5/decode*; do [ -d $x ] && echo $x | grep "${1:-.*}" >/dev/null && grep WER $x/cer_* 2>/dev/null | utils/best_wer.sh; done
+exit 0

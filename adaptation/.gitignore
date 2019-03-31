@@ -1,0 +1,6 @@
+data/
+exp/
+reports/
+*.log
+nohup.out
+*.pyc
